@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+option java_multiple_files = true;
+option java_package = "echo";
+option java_outer_classname = "CalcProto";
+
+package addmessage;
+
+service Calc {
+  rpc add (AddRequest) returns (AddResponse) {}
+}
+//new service means new proto file
+
+// The request message
+message AddRequest {
+  optional int32 num1 = 1;
+  optional int32 num2 = 2;
+}
+
+// The response message
+message AddResponse {
+  optional int32 result = 1;
+}
